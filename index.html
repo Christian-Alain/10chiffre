@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>passer de huit a dix chiffres</title>
+    <style>
+        main{
+            width: 30%;
+            height: 250px;
+            opacity: .8;
+            margin: 100px 450px;
+            /* color: white; */
+            border-radius: 25px;
+            text-align: center;
+            
+        }
+        input[type="text"]{
+            height: 40px;
+            width: 200px;
+        }
+        input[type="submit"]{
+            background: #000;
+            color: white;
+            height: 35px;
+            width: 90px;
+        }
+        h1{
+            font-size:25px;
+            color: skyblue;
+            
+            text-transform:uppercase;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <p></p>
+        <form action="" method="POST">
+            <h1>passer à dix chiffres</h1>
+            <input type="text" name="numero" id="numero" for="numero" placeholder="Entrez votre numero" maxlength="8" >
+            <input type="submit" value="Convertir" onClick="convertir()">
+        </form>
+    </main>
+    
+    <script>
+        // convertir un numero de 8 a 10chiffre
+
+        // var num = ""
+        // num = document.querySelector("input").value;
+        // alert(num);
+       var org = [07,08,09,47,48,49,57,58,59,67,68,69,77,78,79,87,88,89,97,98,99];
+        var mtn = [04,05,06,44,45,46,54,55,56,64,65,66,74,75,76,84,85,86,94,95,96];
+        var moov = [01,02,03,41,42,43,51,52,53,61,62,63,71,72,73,81,82,83,91,92,93];
+        function convertir()
+        {
+            var num = document.getElementById("numero").value;
+            var debutNum = num[0] + num[1]
+            
+            if(org.includes(parseInt(debutNum))==true){
+                alert('votre numero de 10 chiffres est :'+ '07' + num)
+            }
+            else if(mtn.includes(parseInt(debutNum))==true){
+                alert('votre numero de 10 chiffres est :'+ '05' + num)
+            }
+            else if(mtn.includes(parseInt(debutNum))==true){
+                alert('votre numero de 10 chiffres est :'+ '01' + num)
+            }
+            else{
+                alert('format incorrect')
+            }
+        }      
+    </script>
+</body>
+</html>
